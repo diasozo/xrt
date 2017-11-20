@@ -1,0 +1,512 @@
+<?xml version="1.0"?>
+<Project>
+<Beams type="prop">
+	<None type="flat"></None>
+	<LowEnergyEPUbeamGlobal01 type="flat"></LowEnergyEPUbeamGlobal01>
+	<WallCollimatorbeamLocal01 type="flat"></WallCollimatorbeamLocal01>
+	<roundAperture01beamLocal01 type="flat"></roundAperture01beamLocal01>
+	<AfterFMscreenbeamLocal01 type="flat"></AfterFMscreenbeamLocal01>
+	<HorizontalVMaskbeamLocal01 type="flat"></HorizontalVMaskbeamLocal01>
+	<VerticalVMaskbeamLocal01 type="flat"></VerticalVMaskbeamLocal01>
+	<POECollimatorbeamLocal01 type="flat"></POECollimatorbeamLocal01>
+	<bentFlatM1beamGlobal01 type="flat"></bentFlatM1beamGlobal01>
+	<bentFlatM1beamLocal01 type="flat"></bentFlatM1beamLocal01>
+	<AfterM1PbeamLocal01 type="flat"></AfterM1beamLocal01>
+	<PhotonSlits1beamLocal01 type="flat"></PhotonSlits1beamLocal01>
+	<AfterPhotonSlits1ScreenbeamLocal01 type="flat"></AfterPhotonSlits1ScreenbeamLocal01>
+</Beams>
+<Materials type="prop">
+	<Gold type="value">
+		<properties type="prop">
+			<elements type="param">Au</elements>
+			<quantities type="param">None</quantities>
+			<kind type="param">mirror</kind>
+			<rho type="param">19.30</rho>
+			<t type="param">None</t>
+			<table type="param">Chantler</table>
+			<efficiency type="param">None</efficiency>
+			<efficiencyFile type="param">None</efficiencyFile>
+			<name type="param">GoldSurface</name>
+		</properties>
+		<_object type="object">xrt.backends.raycing.materials.Material</_object>
+	</Gold>
+	<CarbonStripe type="value">
+		<properties type="prop">
+			<elements type="param">C</elements>
+			<quantities type="param">None</quantities>
+			<kind type="param">thin mirror</kind>
+			<rho type="param">2.267</rho>
+			<t type="param">0.000035</t>
+			<table type="param">Chantler</table>
+			<efficiency type="param">None</efficiency>
+			<efficiencyFile type="param">None</efficiencyFile>
+			<name type="param">CarbonSurface</name>
+		</properties>
+		<_object type="object">xrt.backends.raycing.materials.Material</_object>
+	</CarbonStripe>
+</Materials>
+<QMSCidealLE type="value">
+	<properties type="prop">
+		<azimuth type="param">0.0</azimuth>
+		<height type="param">0.0</height>
+		<alignE type="param">54.886</alignE>
+		<alignMode type="param">False</alignMode>
+	</properties>
+	<_object type="object">xrt.backends.raycing.BeamLine</_object>
+	<LowEnergyEPU type="value">
+		<properties type="prop">
+			<bl type="param">QMSCidealLE</bl>
+			<name type="param">qmscle</name>
+			<center type="param">(0, 0, 0)</center>
+			<pitch type="param">0</pitch>
+			<yaw type="param">0</yaw>
+			<nrays type="param">100000</nrays>
+			<eE type="param">2.9</eE>
+			<eI type="param">0.25</eI>
+			<eEspread type="param">0.0011</eEspread>
+			<eSigmaX type="param">None</eSigmaX>
+			<eSigmaZ type="param">None</eSigmaZ>
+			<eEpsilonX type="param">22.7</eEpsilonX>
+			<eEpsilonZ type="param">0.1017</eEpsilonZ>
+			<betaX type="param">9.664</betaX>
+			<betaZ type="param">4.331</betaZ>
+			<xPrimeMax type="param">0.556</xPrimeMax>
+			<zPrimeMax type="param">0.306</zPrimeMax>
+			<xPrimeMaxAutoReduce type="param">True</xPrimeMaxAutoReduce>
+			<zPrimeMaxAutoReduce type="param">True</zPrimeMaxAutoReduce>
+			<distE type="param">eV</distE>
+			<targetE type="param">None</targetE>
+			<eMin type="param">12</eMin>
+			<eMax type="param">200</eMax>
+			<eN type="param">51</eN>
+			<K type="param">4</K>
+			<Kx type="param">0</Kx>
+			<Ky type="param">0.0</Ky>
+			<period type="param">180</period>
+			<n type="param">20</n>
+			<phaseDeg type="param">0</phaseDeg>
+			<taper type="param">None</taper>
+			<R0 type="param">None</R0>
+			<filamentBeam type="param">True</filamentBeam>
+			<uniformRayDensity type="param">True</uniformRayDensity>
+			<nx type="param">25</nx>
+			<nz type="param">25</nz>
+			<customField type="param">None</customField>
+			<gp type="param">0.01</gp>
+			<gIntervals type="param">1</gIntervals>
+			<nRK type="param">30</nRK>
+			<targetOpenCL type="param">(0, 2)</targetOpenCL>
+			<precisionOpenCL type="param">auto</precisionOpenCL>
+		</properties>
+		<_object type="object">xrt.backends.raycing.sources.Undulator</_object>
+		<shine type="prop">
+			<parameters type="prop">
+				<toGlobal type="param">True</toGlobal>
+				<withAmplitudes type="param">True</withAmplitudes>
+				<fixedEnergy type="param">False</fixedEnergy>
+				<wave type="param">None</wave>
+				<accuBeam type="param">None</accuBeam>
+			</parameters>
+			<_object type="object">xrt.backends.raycing.sources.Undulator.shine</_object>
+			<output type="prop">
+				<beamGlobal type="param">LowEnergyEPUbeamGlobal01</beamGlobal>
+			</output>
+		</shine>
+	</LowEnergyEPU>
+	<WallCollimator type="value">
+		<properties type="prop">
+			<bl type="param">QMSCidealLE</bl>
+			<name type="param">wallcollimator</name>
+			<center type="param">[0, 11500, 0]</center>
+			<kind type="param">['left', 'right', 'bottom', 'top']</kind>
+			<opening type="param">[-11.115,11.115,-11.115,11.115]</opening>
+			<alarmLevel type="param">None</alarmLevel>
+		</properties>
+		<_object type="object">xrt.backends.raycing.apertures.RectangularAperture</_object>
+		<propagate type="prop">
+			<parameters type="prop">
+				<beam type="param">LowEnergyEPUbeamGlobal01</beam>
+				<needNewGlobal type="param">False</needNewGlobal>
+			</parameters>
+			<_object type="object">xrt.backends.raycing.apertures.RectangularAperture.propagate</_object>
+			<output type="prop">
+				<beamLocal type="param">WallCollimatorbeamLocal01</beamLocal>
+			</output>
+		</propagate>
+	</WallCollimator>
+	<FixedMask type="value">
+		<properties type="prop">
+			<bl type="param">QMSCidealLE</bl>
+			<name type="param">fixedmask</name>
+			<center type="param">[0, 15008, 0]</center>
+			<alarmLevel type="param">None</alarmLevel>
+			<r type="param">10</r>
+		</properties>
+		<_object type="object">xrt.backends.raycing.apertures.RoundAperture</_object>
+		<propagate type="prop">
+			<parameters type="prop">
+				<beam type="param">LowEnergyEPUbeamGlobal01</beam>
+				<needNewGlobal type="param">True</needNewGlobal>
+			</parameters>
+			<_object type="object">xrt.backends.raycing.apertures.RoundAperture.propagate</_object>
+			<output type="prop">
+				<beamLocal type="param">FixedMaskbeamLocal01</beamLocal>
+			</output>
+		</propagate>
+	</FixedMask>
+	<AfterFMscreen type="value">
+		<properties type="prop">
+			<bl type="param">QMSCidealLE</bl>
+			<name type="param">FixedMaskScreen</name>
+			<center type="param">[0, 15100, 0]</center>
+			<x type="param">auto</x>
+			<z type="param">auto</z>
+			<compressX type="param">None</compressX>
+			<compressZ type="param">None</compressZ>
+		</properties>
+		<_object type="object">xrt.backends.raycing.screens.Screen</_object>
+		<expose type="prop">
+			<parameters type="prop">
+				<beam type="param">LowEnergyEPUbeamGlobal01</beam>
+			</parameters>
+			<_object type="object">xrt.backends.raycing.screens.Screen.expose</_object>
+			<output type="prop">
+				<beamLocal type="param">AfterFMscreenbeamLocal01</beamLocal>
+			</output>
+		</expose>
+	</AfterFMscreen>
+	<HorizontalVMask type="value">
+		<properties type="prop">
+			<bl type="param">QMSCidealLE</bl>
+			<name type="param">horizVM</name>
+			<center type="param">[0, 15558, 0]</center>
+			<kind type="param">['left', 'right', 'bottom', 'top']</kind>
+			<opening type="param">[-5,5,-10,10]</opening>
+			<alarmLevel type="param">None</alarmLevel>
+		</properties>
+		<_object type="object">xrt.backends.raycing.apertures.RectangularAperture</_object>
+		<propagate type="prop">
+			<parameters type="prop">
+				<beam type="param">LowEnergyEPUbeamGlobal01</beam>
+				<needNewGlobal type="param">False</needNewGlobal>
+			</parameters>
+			<_object type="object">xrt.backends.raycing.apertures.RectangularAperture.propagate</_object>
+			<output type="prop">
+				<beamLocal type="param">HorizontalVMaskbeamLocal01</beamLocal>
+			</output>
+		</propagate>
+	</HorizontalVMask>
+	<VerticalVMask type="value">
+		<properties type="prop">
+			<bl type="param">QMSCidealLE</bl>
+			<name type="param">vertVM</name>
+			<center type="param">[0, 15748, 0]</center>
+			<kind type="param">['left', 'right', 'bottom', 'top']</kind>
+			<opening type="param">[-10,10,-5,5]</opening>
+			<alarmLevel type="param">None</alarmLevel>
+		</properties>
+		<_object type="object">xrt.backends.raycing.apertures.RectangularAperture</_object>
+		<propagate type="prop">
+			<parameters type="prop">
+				<beam type="param">LowEnergyEPUbeamGlobal01</beam>
+				<needNewGlobal type="param">False</needNewGlobal>
+			</parameters>
+			<_object type="object">xrt.backends.raycing.apertures.RectangularAperture.propagate</_object>
+			<output type="prop">
+				<beamLocal type="param">VerticalVMaskbeamLocal01</beamLocal>
+			</output>
+		</propagate>
+	</VerticalVMask>
+	<POECollimator type="value">
+		<properties type="prop">
+			<bl type="param">QMSCidealLE</bl>
+			<name type="param">POECollimator</name>
+			<center type="param">[0, 17195, 0]</center>
+			<alarmLevel type="param">None</alarmLevel>
+			<r type="param">7.5</r>
+		</properties>
+		<_object type="object">xrt.backends.raycing.apertures.RoundAperture</_object>
+		<propagate type="prop">
+			<parameters type="prop">
+				<beam type="param">LowEnergyEPUbeamGlobal01</beam>
+				<needNewGlobal type="param">False</needNewGlobal>
+			</parameters>
+			<_object type="object">xrt.backends.raycing.apertures.RoundAperture.propagate</_object>
+			<output type="prop">
+				<beamLocal type="param">POECollimatorbeamLocal01</beamLocal>
+			</output>
+		</propagate>
+	</POECollimator>
+	<bentFlatM1 type="value">
+		<properties type="prop">
+			<bl type="param">QMSCidealLE</bl>
+			<name type="param">M1</name>
+			<center type="param">[0, 18000, 0]</center>
+			<pitch type="param">np.radians(1.3)</pitch>
+			<roll type="param">0</roll>
+			<yaw type="param">0</yaw>
+			<positionRoll type="param">-np.pi/2</positionRoll>
+			<extraPitch type="param">0</extraPitch>
+			<extraRoll type="param">0</extraRoll>
+			<extraYaw type="param">0</extraYaw>
+			<rotationSequence type="param">RzRyRx</rotationSequence>
+			<extraRotationSequence type="param">RzRyRx</extraRotationSequence>
+			<surface type="param">None</surface>
+			<material type="param">CarbonStripe</material>
+			<alpha type="param">None</alpha>
+			<limPhysX type="param">[-13.0, 13.0]</limPhysX>
+			<limOptX type="param">-12.0, 12.0</limOptX>
+			<limPhysY type="param">[-225.0, 225.0]</limPhysY>
+			<limOptY type="param">-215, 215</limOptY>
+			<isParametric type="param">False</isParametric>
+			<shape type="param">rect</shape>
+			<gratingDensity type="param">None</gratingDensity>
+			<order type="param">None</order>
+			<shouldCheckCenter type="param">False</shouldCheckCenter>
+			<R type="param">1.548e6</R>
+			<alarmLevel type="param">None</alarmLevel>
+			<targetOpenCL type="param">auto</targetOpenCL>
+			<precisionOpenCL type="param">float32</precisionOpenCL>
+		</properties>
+		<_object type="object">xrt.backends.raycing.oes.BentFlatMirror</_object>
+		<reflect type="prop">
+			<parameters type="prop">
+				<beam type="param">LowEnergyEPUbeamGlobal01</beam>
+				<needLocal type="param">True</needLocal>
+				<noIntersectionSearch type="param">False</noIntersectionSearch>
+				<returnLocalAbsorbed type="param">None</returnLocalAbsorbed>
+			</parameters>
+			<_object type="object">xrt.backends.raycing.oes.BentFlatMirror.reflect</_object>
+			<output type="prop">
+				<beamGlobal type="param">bentFlatM1beamGlobal01</beamGlobal>
+				<beamLocal type="param">bentFlatM1beamLocal01</beamLocal>
+			</output>
+		</reflect>
+	</bentFlatM1>
+	<AfterM1Screen type="value">
+		<properties type="prop">
+			<bl type="param">QMSCidealLE</bl>
+			<name type="param">afterM1screen</name>
+			<center type="param">[0, 18000, 0]</center>
+			<x type="param">auto</x>
+			<z type="param">auto</z>
+			<compressX type="param">None</compressX>
+			<compressZ type="param">None</compressZ>
+		</properties>
+		<_object type="object">xrt.backends.raycing.screens.Screen</_object>
+		<expose type="prop">
+			<parameters type="prop">
+				<beam type="param">bentFlatM1beamGlobal01</beam>
+			</parameters>
+			<_object type="object">xrt.backends.raycing.screens.Screen.expose</_object>
+			<output type="prop">
+				<beamLocal type="param">AfterM1ScreenbeamLocal01</beamLocal>
+			</output>
+		</expose>
+	</AfterM1Screen>
+	<PhotonSlits1 type="value">
+		<properties type="prop">
+			<bl type="param">QMSCidealLE</bl>
+			<name type="param">photonslits1</name>
+			<center type="param">[0, 19000, 0]</center>
+			<kind type="param">['left', 'right', 'bottom', 'top']</kind>
+			<opening type="param">[-2,2,-2,2]</opening>
+			<alarmLevel type="param">None</alarmLevel>
+		</properties>
+		<_object type="object">xrt.backends.raycing.apertures.RectangularAperture</_object>
+		<propagate type="prop">
+			<parameters type="prop">
+				<beam type="param">bentFlatM1beamGlobal01</beam>
+				<needNewGlobal type="param">False</needNewGlobal>
+			</parameters>
+			<_object type="object">xrt.backends.raycing.apertures.RectangularAperture.propagate</_object>
+			<output type="prop">
+				<beamLocal type="param">PhotonSlits1beamLocal01</beamLocal>
+			</output>
+		</propagate>
+	</PhotonSlits1>
+	<AfterPhotonSlits1Screen type="value">
+		<properties type="prop">
+			<bl type="param">QMSCidealLE</bl>
+			<name type="param">None</name>
+			<center type="param">[0, 19000, 0]</center>
+			<x type="param">auto</x>
+			<z type="param">auto</z>
+			<compressX type="param">None</compressX>
+			<compressZ type="param">None</compressZ>
+		</properties>
+		<_object type="object">xrt.backends.raycing.screens.Screen</_object>
+		<expose type="prop">
+			<parameters type="prop">
+				<beam type="param">bentFlatM1beamGlobal01</beam>
+			</parameters>
+			<_object type="object">xrt.backends.raycing.screens.Screen.expose</_object>
+			<output type="prop">
+				<beamLocal type="param">AfterPhotonSlits1ScreenbeamLocal01</beamLocal>
+			</output>
+		</expose>
+	</AfterPhotonSlits1Screen>
+</QMSCidealLE>
+<plots type="value">
+	<AfterM1 type="value">
+		<_object type="object">xrt.plotter.XYCPlot</_object>
+		<beam type="param">AfterM1beamLocal01</beam>
+		<rayFlag type="param">(1,)</rayFlag>
+		<xaxis type="prop">
+			<_object type="object">xrt.plotter.XYCAxis</_object>
+			<label type="param">x</label>
+			<unit type="param">mm</unit>
+			<factor type="param">None</factor>
+			<data type="param">auto</data>
+			<limits type="param">None</limits>
+			<offset type="param">0</offset>
+			<bins type="param">128</bins>
+			<ppb type="param">2</ppb>
+			<density type="param">histogram</density>
+			<invertAxis type="param">False</invertAxis>
+			<outline type="param">0.5</outline>
+			<fwhmFormatStr type="param">%.1f</fwhmFormatStr>
+		</xaxis>
+		<yaxis type="prop">
+			<_object type="object">xrt.plotter.XYCAxis</_object>
+			<label type="param">z</label>
+			<unit type="param">mm</unit>
+			<factor type="param">None</factor>
+			<data type="param">auto</data>
+			<limits type="param">None</limits>
+			<offset type="param">0</offset>
+			<bins type="param">128</bins>
+			<ppb type="param">2</ppb>
+			<density type="param">histogram</density>
+			<invertAxis type="param">False</invertAxis>
+			<outline type="param">0.5</outline>
+			<fwhmFormatStr type="param">%.1f</fwhmFormatStr>
+		</yaxis>
+		<caxis type="prop">
+			<_object type="object">xrt.plotter.XYCAxis</_object>
+			<label type="param">energy</label>
+			<unit type="param">eV</unit>
+			<factor type="param">None</factor>
+			<data type="param">auto</data>
+			<limits type="param">None</limits>
+			<offset type="param">0</offset>
+			<bins type="param">256</bins>
+			<ppb type="param">1</ppb>
+			<density type="param">histogram</density>
+			<invertAxis type="param">False</invertAxis>
+			<outline type="param">0.5</outline>
+			<fwhmFormatStr type="param">%.1f</fwhmFormatStr>
+		</caxis>
+		<aspect type="param">auto</aspect>
+		<xPos type="param">1</xPos>
+		<yPos type="param">1</yPos>
+		<ePos type="param">1</ePos>
+		<title type="param">AfterM1</title>
+		<invertColorMap type="param">False</invertColorMap>
+		<negative type="param">False</negative>
+		<fluxKind type="param">total</fluxKind>
+		<fluxUnit type="param">auto</fluxUnit>
+		<fluxFormatStr type="param">%g</fluxFormatStr>
+		<contourLevels type="param">None</contourLevels>
+		<contourColors type="param">None</contourColors>
+		<contourFmt type="param">%.1f</contourFmt>
+		<contourFactor type="param">1.0</contourFactor>
+		<saveName type="param">None</saveName>
+		<persistentName type="param">None</persistentName>
+		<oe type="param">None</oe>
+		<raycingParam type="param">0</raycingParam>
+		<beamState type="param">None</beamState>
+		<beamC type="param">None</beamC>
+	</AfterM1>
+	<AfterFM type="value">
+		<_object type="object">xrt.plotter.XYCPlot</_object>
+		<beam type="param">AfterFMscreenbeamLocal01</beam>
+		<rayFlag type="param">(1,)</rayFlag>
+		<xaxis type="prop">
+			<_object type="object">xrt.plotter.XYCAxis</_object>
+			<label type="param">x</label>
+			<unit type="param">mm</unit>
+			<factor type="param">None</factor>
+			<data type="param">auto</data>
+			<limits type="param">None</limits>
+			<offset type="param">0</offset>
+			<bins type="param">128</bins>
+			<ppb type="param">2</ppb>
+			<density type="param">histogram</density>
+			<invertAxis type="param">False</invertAxis>
+			<outline type="param">0.5</outline>
+			<fwhmFormatStr type="param">%.1f</fwhmFormatStr>
+		</xaxis>
+		<yaxis type="prop">
+			<_object type="object">xrt.plotter.XYCAxis</_object>
+			<label type="param">z</label>
+			<unit type="param">mm</unit>
+			<factor type="param">None</factor>
+			<data type="param">auto</data>
+			<limits type="param">None</limits>
+			<offset type="param">0</offset>
+			<bins type="param">128</bins>
+			<ppb type="param">2</ppb>
+			<density type="param">histogram</density>
+			<invertAxis type="param">False</invertAxis>
+			<outline type="param">0.5</outline>
+			<fwhmFormatStr type="param">%.1f</fwhmFormatStr>
+		</yaxis>
+		<caxis type="prop">
+			<_object type="object">xrt.plotter.XYCAxis</_object>
+			<label type="param">energy</label>
+			<unit type="param">eV</unit>
+			<factor type="param">None</factor>
+			<data type="param">auto</data>
+			<limits type="param">None</limits>
+			<offset type="param">0</offset>
+			<bins type="param">256</bins>
+			<ppb type="param">1</ppb>
+			<density type="param">histogram</density>
+			<invertAxis type="param">False</invertAxis>
+			<outline type="param">0.5</outline>
+			<fwhmFormatStr type="param">%.1f</fwhmFormatStr>
+		</caxis>
+		<aspect type="param">auto</aspect>
+		<xPos type="param">1</xPos>
+		<yPos type="param">1</yPos>
+		<ePos type="param">1</ePos>
+		<title type="param">FixedMaskBeam</title>
+		<invertColorMap type="param">False</invertColorMap>
+		<negative type="param">False</negative>
+		<fluxKind type="param">total</fluxKind>
+		<fluxUnit type="param">auto</fluxUnit>
+		<fluxFormatStr type="param">%g</fluxFormatStr>
+		<contourLevels type="param">None</contourLevels>
+		<contourColors type="param">None</contourColors>
+		<contourFmt type="param">%.1f</contourFmt>
+		<contourFactor type="param">1.0</contourFactor>
+		<saveName type="param">plot02.title.png</saveName>
+		<persistentName type="param">None</persistentName>
+		<oe type="param">None</oe>
+		<raycingParam type="param">0</raycingParam>
+		<beamState type="param">None</beamState>
+		<beamC type="param">None</beamC>
+	</AfterFM>
+</plots>
+<run_ray_tracing type="prop">
+	<_object type="object">xrt.runner.run_ray_tracing</_object>
+	<plots type="param">plots</plots>
+	<repeats type="param">5</repeats>
+	<updateEvery type="param">1</updateEvery>
+	<pickleEvery type="param">None</pickleEvery>
+	<energyRange type="param">None</energyRange>
+	<backend type="param">raycing</backend>
+	<beamLine type="param">QMSCidealLE</beamLine>
+	<threads type="param">1</threads>
+	<processes type="param">1</processes>
+	<generator type="param">None</generator>
+	<generatorArgs type="param">[]</generatorArgs>
+	<generatorKWargs type="param">auto</generatorKWargs>
+	<globalNorm type="param">0</globalNorm>
+	<afterScript type="param">None</afterScript>
+	<afterScriptArgs type="param">[]</afterScriptArgs>
+	<afterScriptKWargs type="param">{}</afterScriptKWargs>
+</run_ray_tracing>
+<description>QMSC Ideal Low Energy</description>
+</Project>
