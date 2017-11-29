@@ -4,7 +4,6 @@
 	<None type="flat"></None>
 	<LowEnergyIdealbeamGlobal01 type="flat"></LowEnergyIdealbeamGlobal01>
 	<rectangularAperture01beamLocal01 type="flat"></rectangularAperture01beamLocal01>
-	<screen01beamLocal01 type="flat"></screen01beamLocal01>
 	<roundAperture01beamLocal01 type="flat"></roundAperture01beamLocal01>
 	<screen02beamLocal01 type="flat"></screen02beamLocal01>
 	<rectangularAperture02beamLocal01 type="flat"></rectangularAperture02beamLocal01>
@@ -17,25 +16,39 @@
 	<screen03beamLocal01 type="flat"></screen03beamLocal01>
 </Beams>
 <Materials type="prop">
+	<Gold type="value">
+		<properties type="prop">
+			<elements type="param">Au</elements>
+			<quantities type="param">None</quantities>
+			<kind type="param">mirror</kind>
+			<rho type="param">19.3</rho>
+			<t type="param">None</t>
+			<table type="param">Henke</table>
+			<efficiency type="param">None</efficiency>
+			<efficiencyFile type="param">None</efficiencyFile>
+			<name type="param">M_Au</name>
+		</properties>
+		<_object type="object">xrt.backends.raycing.materials.Material</_object>
+	</Gold>
 </Materials>
 <LowEnergyM1 type="value">
 	<properties type="prop">
 		<azimuth type="param">0.0</azimuth>
 		<height type="param">0.0</height>
-		<alignE type="param">54.886</alignE>
-		<alignMode type="param">False</alignMode>
+		<alignE type="param">123</alignE>
+		<alignMode type="param">True</alignMode>
 	</properties>
 	<_object type="object">xrt.backends.raycing.BeamLine</_object>
 	<LowEnergyIdeal type="value">
 		<properties type="prop">
 			<bl type="param">LowEnergyM1</bl>
 			<name type="param">LowEnergyIdeal</name>
-			<center type="param">(0, 0, 0)</center>
+			<center type="param">(0, -1800, 0)</center>
 			<pitch type="param">0</pitch>
 			<yaw type="param">0</yaw>
-			<nrays type="param">100000</nrays>
+			<nrays type="param">2e6</nrays>
 			<eE type="param">2.9</eE>
-			<eI type="param">0.25</eI>
+			<eI type="param">0.22</eI>
 			<eEspread type="param">0.0011</eEspread>
 			<eSigmaX type="param">None</eSigmaX>
 			<eSigmaZ type="param">None</eSigmaZ>
@@ -43,16 +56,16 @@
 			<eEpsilonZ type="param">0.1017</eEpsilonZ>
 			<betaX type="param">9.664</betaX>
 			<betaZ type="param">4.331</betaZ>
-			<xPrimeMax type="param">0.5</xPrimeMax>
-			<zPrimeMax type="param">0.5</zPrimeMax>
+			<xPrimeMax type="param">0.516</xPrimeMax>
+			<zPrimeMax type="param">0.175</zPrimeMax>
 			<xPrimeMaxAutoReduce type="param">True</xPrimeMaxAutoReduce>
 			<zPrimeMaxAutoReduce type="param">True</zPrimeMaxAutoReduce>
 			<distE type="param">eV</distE>
-			<targetE type="param">None</targetE>
-			<eMin type="param">10.0</eMin>
-			<eMax type="param">200.0</eMax>
+			<targetE type="param">[123.0,1,False]</targetE>
+			<eMin type="param">118</eMin>
+			<eMax type="param">128</eMax>
 			<eN type="param">51</eN>
-			<K type="param">4.0</K>
+			<K type="param">auto</K>
 			<Kx type="param">0</Kx>
 			<Ky type="param">0.0</Ky>
 			<period type="param">180</period>
@@ -107,27 +120,6 @@
 			</output>
 		</propagate>
 	</rectangularAperture01>
-	<screen01 type="value">
-		<properties type="prop">
-			<bl type="param">LowEnergyM1</bl>
-			<name type="param">WallCollimatorScreen</name>
-			<center type="param">[0, 11500, 0]</center>
-			<x type="param">auto</x>
-			<z type="param">auto</z>
-			<compressX type="param">None</compressX>
-			<compressZ type="param">None</compressZ>
-		</properties>
-		<_object type="object">xrt.backends.raycing.screens.Screen</_object>
-		<expose type="prop">
-			<parameters type="prop">
-				<beam type="param">LowEnergyIdealbeamGlobal01</beam>
-			</parameters>
-			<_object type="object">xrt.backends.raycing.screens.Screen.expose</_object>
-			<output type="prop">
-				<beamLocal type="param">screen01beamLocal01</beamLocal>
-			</output>
-		</expose>
-	</screen01>
 	<roundAperture01 type="value">
 		<properties type="prop">
 			<bl type="param">LowEnergyM1</bl>
