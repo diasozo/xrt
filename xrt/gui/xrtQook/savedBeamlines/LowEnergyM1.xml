@@ -238,7 +238,7 @@
 			<rotationSequence type="param">RzRyRx</rotationSequence>
 			<extraRotationSequence type="param">RzRyRx</extraRotationSequence>
 			<surface type="param">None</surface>
-			<material type="param">None</material>
+			<material type="param">Gold</material>
 			<alpha type="param">None</alpha>
 			<limPhysX type="param">[-215.0, 215.0]</limPhysX>
 			<limOptX type="param">None</limOptX>
