@@ -14,6 +14,8 @@
 	<rectangularAperture04beamLocal01 type="flat"></rectangularAperture04beamLocal01>
 	<oe01beamGlobal01 type="flat"></oe01beamGlobal01>
 	<oe01beamLocal01 type="flat"></oe01beamLocal01>
+	<vlSGrating01beamGlobal01 type="flat"></vlSGrating01beamGlobal01>
+	<vlSGrating01beamLocal01 type="flat"></vlSGrating01beamLocal01>
 </Beams>
 <Materials type="prop">
 	<Gold type="value">
@@ -30,6 +32,20 @@
 		</properties>
 		<_object type="object">xrt.backends.raycing.materials.Material</_object>
 	</Gold>
+	<Gold_LEG type="value">
+		<properties type="prop">
+			<elements type="param">Au</elements>
+			<quantities type="param">None</quantities>
+			<kind type="param">grating</kind>
+			<rho type="param">19.3</rho>
+			<t type="param">None</t>
+			<table type="param">Henke</table>
+			<efficiency type="param">None</efficiency>
+			<efficiencyFile type="param">None</efficiencyFile>
+			<name type="param">M_LEG_Au</name>
+		</properties>
+		<_object type="object">xrt.backends.raycing.materials.Material</_object>
+	</Gold_LEG>
 </Materials>
 <LowEnergyM1 type="value">
 	<properties type="prop">
@@ -334,6 +350,55 @@
 			</output>
 		</reflect>
 	</oe01>
+	<vlSGrating01 type="value">
+		<properties type="prop">
+			<bl type="param">LowEnergyM1</bl>
+			<name type="param">LEG</name>
+			<center type="param">[136.089, 20996.91, 0]</center>
+			<pitch type="param">6 deg</pitch>
+			<roll type="param">0</roll>
+			<yaw type="param">2.6 deg</yaw>
+			<positionRoll type="param">180 deg</positionRoll>
+			<extraPitch type="param">0</extraPitch>
+			<extraRoll type="param">0</extraRoll>
+			<extraYaw type="param">0</extraYaw>
+			<rotationSequence type="param">RzRyRx</rotationSequence>
+			<extraRotationSequence type="param">RzRyRx</extraRotationSequence>
+			<surface type="param">None</surface>
+			<material type="param">Gold_LEG</material>
+			<alpha type="param">None</alpha>
+			<limPhysX type="param">[-1000.0, 1000.0]</limPhysX>
+			<limOptX type="param">None</limOptX>
+			<limPhysY type="param">[-1000.0, 1000.0]</limPhysY>
+			<limOptY type="param">None</limOptY>
+			<isParametric type="param">False</isParametric>
+			<shape type="param">rect</shape>
+			<gratingDensity type="param">[‘y’, 299.93, 1, 1.64e-4, 2.226e-8]</gratingDensity>
+			<order type="param">None</order>
+			<shouldCheckCenter type="param">False</shouldCheckCenter>
+			<alarmLevel type="param">None</alarmLevel>
+			<rho type="param">None</rho>
+			<aspect type="param">0.5</aspect>
+			<depth type="param">1e-3</depth>
+			<coeffs type="param">[1, 0, 0]</coeffs>
+			<targetOpenCL type="param">None</targetOpenCL>
+			<precisionOpenCL type="param">float64</precisionOpenCL>
+		</properties>
+		<_object type="object">xrt.backends.raycing.oes.VLSGrating</_object>
+		<reflect type="prop">
+			<parameters type="prop">
+				<beam type="param">oe01beamGlobal01</beam>
+				<needLocal type="param">True</needLocal>
+				<noIntersectionSearch type="param">False</noIntersectionSearch>
+				<returnLocalAbsorbed type="param">None</returnLocalAbsorbed>
+			</parameters>
+			<_object type="object">xrt.backends.raycing.oes.VLSGrating.reflect</_object>
+			<output type="prop">
+				<beamGlobal type="param">vlSGrating01beamGlobal01</beamGlobal>
+				<beamLocal type="param">vlSGrating01beamLocal01</beamLocal>
+			</output>
+		</reflect>
+	</vlSGrating01>
 </LowEnergyM1>
 <plots type="value">
 	<plot01 type="value">
